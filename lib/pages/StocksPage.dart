@@ -31,12 +31,27 @@ class _StocksPageState extends State<StocksPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: currentPrice("PRICE"),
+                    child: currentPrice("Open Price:"),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: currentPrice("Close Price:"),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: currentPrice("Prev Open:"),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: currentPrice("Prev Close:"),
                   ),
                 ],
                 staggeredTiles: [
                   StaggeredTile.extent(4, 250),
-                  StaggeredTile.extent(2, 150)
+                  StaggeredTile.extent(2, 150),
+                  StaggeredTile.extent(2, 150),
+                  StaggeredTile.extent(2, 150),
+                  StaggeredTile.extent(2, 150),
                 ],
               ),
             ),
