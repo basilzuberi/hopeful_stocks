@@ -10,7 +10,6 @@ class StocksPage extends StatefulWidget{
 class _StocksPageState extends State<StocksPage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       body: new Container(
         child: new Column(
@@ -26,23 +25,23 @@ class _StocksPageState extends State<StocksPage> {
                 mainAxisSpacing: 12.0,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(4.0),
                     child: thisStock("MSFT"),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(4.0),
                     child: currentPrice("Open Price:"),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: currentPrice("Close Price:"),
+                    padding: EdgeInsets.all(4.0),
+                    child: currentPrice("Current Price:"),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(4.0),
                     child: currentPrice("Prev Open:"),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(4.0),
                     child: currentPrice("Prev Close:"),
                   ),
                 ],
@@ -87,7 +86,7 @@ class _StocksPageState extends State<StocksPage> {
 
                     Padding(
                    padding: EdgeInsets.all(8.0),
-                      child:Text("250",style:TextStyle(
+                      child:Text("\$250",style:TextStyle(
                         fontSize: 20.0,
                         color: Colors.white,
                       ),),
@@ -111,7 +110,7 @@ class _StocksPageState extends State<StocksPage> {
         shadowColor: Color(0x802196F3),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(5.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -120,7 +119,7 @@ class _StocksPageState extends State<StocksPage> {
                   children: <Widget>[
 
                     Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(5.0),
                       child:Text(title,style:TextStyle(
                         fontSize: 20.0,
                         color: Colors.white,
@@ -128,13 +127,19 @@ class _StocksPageState extends State<StocksPage> {
                     ),
 
                     Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(5.0),
                       child: new Sparkline(
                         data: data,
                         lineColor: Color(0xffff6101),
-                        pointsMode: PointsMode.all,
+                        pointsMode: PointsMode.last,
                         pointColor: Colors.white,
                         pointSize: 8.0,
+                        fillMode: FillMode.below,
+                        fillGradient: new LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.white, Colors.white10],
+                        ),
                       ),
                     ),
 
